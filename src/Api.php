@@ -1,8 +1,8 @@
 <?php 
 namespace App;
 
-use Telegram\Keyboard;
-use Telegram\Files;
+use App\Keyboard;
+use App\Files;
 
 class Api
 {
