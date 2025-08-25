@@ -16,7 +16,7 @@ class MakeModelCommand extends Command
         $tableName = strtolower(preg_replace('/([A-Z])/', '_$1', $modelName));
         $tableName = ltrim($tableName, '_') . 's';
         
-        $modelPath = "src/Models/{$modelName}.php";
+        $modelPath = "Models/{$modelName}.php";
         
         if (file_exists($modelPath)) {
             $this->error("Model {$modelName} already exists!");
