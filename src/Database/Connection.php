@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpTeleBot\Database;
+namespace App\Database;
 
 use PDO;
 use PDOException;
