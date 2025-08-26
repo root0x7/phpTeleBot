@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpTeleBot\Models;
+namespace App\Models;
 
-use PhpTeleBot\Database\Model;
+use App\Database\Model;
 
-class User extends Model
+class Users extends Model
 {
-    protected static string $table = 'users';
+    protected static string $table = 'userss';
     
     // Fillable fields
     protected array $fillable = [
@@ -16,6 +16,6 @@ class User extends Model
     // Custom methods
     public function example(): string
     {
-        return 'This is an example method for User';
+        return 'This is an example method for Users';
     }
 }

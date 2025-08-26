@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Root0x7\Console\Commands;
 
 abstract class Command
 {

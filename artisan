@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/./vendor/autoload.php';
 
-use App\Console\Application;
+use Root0x7\Console\Application;
 
 $app = new Application();
 $app->run();

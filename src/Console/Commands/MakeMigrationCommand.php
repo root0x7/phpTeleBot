@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Root0x7\Console\Commands;
 
 class MakeMigrationCommand extends Command
 {
@@ -16,11 +16,11 @@ class MakeMigrationCommand extends Command
         $timestamp = date('Y_m_d_His');
         $className = $this->formatClassName($migrationName);
         $fileName = "{$timestamp}_{$migrationName}.php";
-        $migrationPath = "database/migrations/{$fileName}";
+        $migrationPath = "app/Database/Migrations/{$fileName}";
         
         // Create migrations directory if not exists
-        if (!is_dir('database/migrations')) {
-            mkdir('database/migrations', 0755, true);
+        if (!is_dir('app/Database/Migrations')) {
+            mkdir('app/Database/Migrations', 0755, true);
         }
         
         $template = $this->getMigrationTemplate($className, $migrationName);
@@ -46,45 +46,45 @@ class MakeMigrationCommand extends Command
             
             return "<?php
 
-            use App\\Database\\Schema;
-            use App\\Database\\Migration;
+use Root0x7\\Database\\Schema;
+use Root0x7\\Database\\Migration;
 
-            class {$className} extends Migration
-            {
-                public function up(): void
-                {
-                    Schema::create('{$tableName}', function(\$table) {
-                        \$table->id();
-            // Add your columns here
-                        \$table->timestamps();
-                        });
-                    }
-                    
-                    public function down(): void
-                    {
-                        Schema::dropIfExists('{$tableName}');
-                    }
-                }
+class {$className} extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('{$tableName}', function(\$table) {
+\$table->id();
+// Add your columns here
+\$table->timestamps();
+});
+        }
+        
+        public function down(): void
+        {
+Schema::dropIfExists('{$tableName}');
+        }
+    }
                 ";
             } else {
                 return "<?php
 
-                use App\\Database\\Schema;
-                use App\\Database\\Migration;
-                use App\\Database\\Connection;
+use Root0x7\\Database\\Schema;
+use Root0x7\\Database\\Migration;
+use Root0x7\\Database\\Connection;
 
-                class {$className} extends Migration
-                {
-                    public function up(): void
-                    {
-        // Add your migration logic here
-                    }
+class {$className} extends Migration
+{
+    public function up(): void
+    {
+    // Add your migration logic here
+    }
                     
-                    public function down(): void
-                    {
-        // Add your rollback logic here
-                    }
-                }
+    public function down(): void
+    {
+    // Add your rollback logic here
+    }
+ }
                 ";
             }
         }

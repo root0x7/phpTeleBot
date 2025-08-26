@@ -1,6 +1,5 @@
 <?php
-
-namespace App;
+namespace Root0x7;
 
 
 class Files

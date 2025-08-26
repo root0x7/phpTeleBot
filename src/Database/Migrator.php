@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Database;
+namespace Root0x7\Database;
 
 use Exception;
 
 class Migrator
 {
-    private string $migrationsPath = 'database/migrations';
+    private string $migrationsPath = 'app/Database/Migrations';
     private string $migrationsTable = 'migrations';
     
     public function createMigrationsTable(): void

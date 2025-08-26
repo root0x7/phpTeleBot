@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console;
+namespace Root0x7\Console;
 
 use Exception;
 

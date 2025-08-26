@@ -1,10 +1,11 @@
 <?php 
 include 'vendor/autoload.php';
 
-use App\Api;
-use App\Command;
+use Root0x7\Api;
+use Root0x7\Command;
+use Env\Env;
 
-$api = new Api('5551662847:AAFK5dQLivBJLTacEA-XLUBy5NjbKFZ3E-s');
+$api = new Api('5551662847:AAFK5dQLivBJLTacEA-XLUBy5NjbKFZ3E-s',[]);
 $update = json_decode(file_get_contents('php://input'));
 $message = $update->message;
 $mid = $message->message_id;
@@ -13,12 +14,7 @@ $tx = $message->text;
 
 
 
-$command = new Command();
-$command->handle = $tx;
-$key = $api->keyboard->resize([
-        ['salom','salom']
-    ]);
 
-$command->start(function(Api $bot){
-    return $api->sendMessage();
-});
+print_r("salom");
+
+print_r(Env::get('test'));

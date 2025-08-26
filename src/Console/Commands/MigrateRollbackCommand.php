@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Root0x7\Console\Commands;
 
-use App\Database\Migrator;
+use Root0x7\Database\Migrator;
 
 class MigrateRollbackCommand extends Command
 {

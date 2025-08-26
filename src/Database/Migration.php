@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpTeleBot\Database;
+namespace Root0x7\Database;
 
 abstract class Migration
 {
