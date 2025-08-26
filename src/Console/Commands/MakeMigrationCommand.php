@@ -46,8 +46,8 @@ class MakeMigrationCommand extends Command
             
             return "<?php
 
-            use PhpTeleBot\\Database\\Schema;
-            use PhpTeleBot\\Database\\Migration;
+            use App\\Database\\Schema;
+            use App\\Database\\Migration;
 
             class {$className} extends Migration
             {
@@ -69,9 +69,9 @@ class MakeMigrationCommand extends Command
             } else {
                 return "<?php
 
-                use PhpTeleBot\\Database\\Schema;
-                use PhpTeleBot\\Database\\Migration;
-                use PhpTeleBot\\Database\\Connection;
+                use App\\Database\\Schema;
+                use App\\Database\\Migration;
+                use App\\Database\\Connection;
 
                 class {$className} extends Migration
                 {

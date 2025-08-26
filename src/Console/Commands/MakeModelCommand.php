@@ -16,7 +16,7 @@ class MakeModelCommand extends Command
         $tableName = strtolower(preg_replace('/([A-Z])/', '_$1', $modelName));
         $tableName = ltrim($tableName, '_') . 's';
         
-        $modelPath = "Models/{$modelName}.php";
+        $modelPath = "models/{$modelName}.php";
         
         if (file_exists($modelPath)) {
             $this->error("Model {$modelName} already exists!");
@@ -26,8 +26,8 @@ class MakeModelCommand extends Command
         $template = $this->getModelTemplate($modelName, $tableName);
         
         // Create Models directory if not exists
-        if (!is_dir('src/Models')) {
-            mkdir('src/Models', 0755, true);
+        if (!is_dir('models')) {
+            mkdir('models', 0755, true);
         }
         
         file_put_contents($modelPath, $template);
@@ -47,9 +47,9 @@ class MakeModelCommand extends Command
     {
         return "<?php
 
-        namespace PhpTeleBot\\Models;
+        namespace App\\Models;
 
-        use PhpTeleBot\\Database\\Model;
+        use App\\Database\\Model;
 
         class {$modelName} extends Model
         {
